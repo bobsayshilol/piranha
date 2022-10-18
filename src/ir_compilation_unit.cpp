@@ -37,7 +37,7 @@ piranha::IrCompilationUnit::ParseResult piranha::IrCompilationUnit::parseFile(
 {
     m_path = filename;
     
-    std::ifstream inFile(filename.toString());
+    std::ifstream inFile(filename.toString(), std::ios::binary | std::ios::in);
     if (!inFile.good()) {
         return ParseResult::IoError;
     }
